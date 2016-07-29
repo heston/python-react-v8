@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
-with open(os.path.join(os.path.dir(__file__), 'requirements.txt')) as f:
+with open(os.path.join(os.path.dirname(__file__), 'requirements.txt')) as f:
     REQUIREMENTS = f.read()
 
 URL = 'https://github.com/nitely/python-react-v8'

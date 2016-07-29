@@ -2,6 +2,8 @@
 
 import json
 
+import six
+
 from . import utils
 
 __all__ = [
@@ -96,7 +98,7 @@ class React:
         :return: Received data in json format
         :rtype: str
         """
-        if isinstance(data, str):
+        if isinstance(data, six.string_types):
             return data
 
         return json.dumps(data)

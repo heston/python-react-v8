@@ -1,2 +1,2 @@
-six==0.10.1
+six==1.10.0
 -e git+https://github.com/heston/v8-cffi.git@e1693986f7ea5e96680bac3e46afb2352b23a133#egg=v8_cffi

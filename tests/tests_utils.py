@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from unittest.mock import patch
+try:
+    from unittest.mock import patch
+except ImportError:
+    from mock import patch
+
 import unittest
 import logging
 import os
@@ -9,6 +13,7 @@ from contextlib import contextmanager
 
 import react
 from react import utils
+import six
 
 
 logging.disable(logging.CRITICAL)
@@ -18,8 +23,8 @@ _global = '__global'
 
 @contextmanager
 def js_file(data):
-    if isinstance(data, str):
-        data = bytes(data, 'utf-8')
+    if isinstance(data, six.text_type):
+        data = data.encode('utf-8')
 
     temp = tempfile.NamedTemporaryFile(delete=False)
     temp.write(data)

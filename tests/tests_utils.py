@@ -11,9 +11,10 @@ import os
 import tempfile
 from contextlib import contextmanager
 
+import six
+
 import react
 from react import utils
-import six
 
 
 logging.disable(logging.CRITICAL)

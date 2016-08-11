@@ -99,6 +99,9 @@ class React:
         :return: Received data in json format
         :rtype: str
         """
+        if isinstance(data, six.string_types):
+            return data
+
         data_ = json.dumps(data)
 
         if isinstance(data_, six.binary_type):
